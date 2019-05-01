@@ -1,64 +1,251 @@
+/*
+ * BASE STYLES
+ */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    /* Set margin to 0 pixels on all sides */
-    /* Set font family to be Helvetica or Arial */
-    /* Set line height to be 1.5 times larger than default */
+    margin: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    color: #333;
 }
 
-header {
-    /* Set text alignment to center */
-}
-
-main {
-    /* Set maximum width to be 800 pixels */
-    /* Set margin to be automatically calculated on all sides */
-    /* Set padding to be 0 pixels top & bottom, and 20 pixels left & right */
+h1, h2, h3, h4 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 p {
-    line-height: 1.5;
+    line-height: 2;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
 }
 
-.faded {
-    /* Set opacity of the text to be 0.7 */
+section {
+    padding: 4rem 0;
 }
 
-img {
-    /* Set max width to be 100% of the containing element */
+.wrapper {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-h1 {
-    /* Set border along bottom to be a black solid line 5 pixels thick */
-}
-
-h2 {
-    /* Set font color to be red (BONUS: try using a hex code like #e51b24!) */
-}
-
-footer {
-    /* Set font color to white */
-    /* Set background color to black */
-    /* Set padding on all sides to be 20 pixels */
-    /* Set text alignment to center */
-    /* Set margin on top to be 60 pixels */
-}
-
-/* Media queries are an implementation of adaptive design
-  They are dependant on hitting breakpoints
-*/
-@media (min-width: 800px) {
-    body {
-        /* Set the background color to be red */
-        /* Set the font color to be white */
+@media screen and (min-width: 720px) {
+    section {
+        padding: 2rem;
     }
-    /* Question - did the font color change? If not, why? Let's fix that below */
-
-    /* Where did the H2's go? See if you can fix that too! */
 }
 
-@media (min-width:600px) {
-    /*  change h1 font size for h1 to 2em  */
-    /*  change h1 font color to red */
-    /*  change p font size to .5em */
+@media screen and (min-width: 1024px) {
+    section {
+        padding: 4rem;
+    }
+}
 
+/*
+ * Hero
+ */
+.hero {
+    height: 90vh;
+    text-align: center;
+    padding: 3rem;
+    background-image: url("..images/hero.png");
+    background-position: center center;
+    background-size: cover;
+}
+
+.menu {
+    text-transform: uppercase;
+    color: inherit;
+    letter-spacing: 4px;
+}
+
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 2rem;
+}
+
+nav ul {
+    padding-left: 0;
+}
+
+nav li {
+    list-style-type: none;
+    padding: 0.5rem 1rem;
+}
+
+nav a {
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-family: 'Oswald', sans-serif;
+    color: #333;
+    padding: 0.5rem 1.5rem;
+    transition: all 300ms ease;
+}
+
+nav a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+@media screen and (max-width: 720px) {
+
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 100vw;
+        opacity: 0;
+        transition: opacity 300ms ease;
+        background-color: white;
+        pointer-events: none;
+    }
+
+    nav.open {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    nav a {
+        font-size: 24px;
+        line-height: 1.5;
+    }
+
+}
+
+@media screen and (min-width: 720px) {
+    nav {
+        display: block;
+    }
+
+    nav li {
+        display: inline-block;
+    }
+
+    .menu,
+    .close {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    nav li {
+        padding: 1rem 2rem;
+    }
+}
+
+/*
+ * Intro
+ */
+.intro {
+    text-align: center;
+}
+
+.image-row {
+    margin-top: 3rem;
+}
+
+.image {
+    display: inline-block;
+    padding-top: 100%;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+}
+
+.image-1 {
+    background-image: url("..images/11th-and-F.jpg");
+}
+
+.image-2 {
+    background-image: url("..images/capitol-statue.jpg");
+}
+
+.image-3 {
+    background-image: url("..images/metro-escalator.jpg");
+}
+
+@media screen and (min-width: 720px) {
+
+    .image {
+        width: 30%;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    .image {
+        padding-top: 35%;
+    }
+}
+
+/*
+ * About
+ */
+
+.about {
+    background-color: #D2DBE0;
+    text-align: center;
+}
+
+.about h4 {
+    margin-bottom: 2.5rem;
+}
+
+.about p {
+    text-align: left;
+}
+
+/*
+ * Call to Action
+ */
+.call-to-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40vh;
+    background-position: center center;
+    background-size: cover;
+    background-image: url("..images/jefferson.png");
+}
+
+.button {
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-family: 'Oswald', sans-serif;
+    color: inherit;
+    border: 2px solid #333;
+    padding: 0.6rem 2.5rem;
+    transition: all 300ms ease;
+}
+
+.button:hover {
+    background-color: #333;
+    color: #fff
+}
+
+/*
+ * Footer
+ */
+footer {
+    background-color: #D2DBE0;
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+footer h4 {
+    margin: 0;
+    line-height: 1;
 }
