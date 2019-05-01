@@ -165,15 +165,15 @@ nav a:hover {
 }
 
 .image-1 {
-    background-image: url("../images/11th-and-F.jpg");
+    background-image: url("../images/twoleaves.PNG");
 }
 
 .image-2 {
-    background-image: url("../images/capitol-statue.jpg");
+    background-image: url("../images/NYLibrary.jpg");
 }
 
 .image-3 {
-    background-image: url("../images/metro-escalator.jpg");
+    background-image: url("../images/mydog.jpg");
 }
 
 @media screen and (min-width: 720px) {
@@ -216,7 +216,7 @@ nav a:hover {
     min-height: 40vh;
     background-position: center center;
     background-size: cover;
-    background-image: url("../images/jefferson.png");
+    background-image: url("../images/NYview.PNG");
 }
 
 .button {
